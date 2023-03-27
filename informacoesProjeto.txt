@@ -3,10 +3,12 @@
 Alex Ronny Tavares Rufino 
 alex.rufino@aluno.faculdadeimpacta.com.br
 RA 2101305
+EAD - ADS 5A
 
 Débora Tavares Vital do Nascimento
 debora.nascimento@aluno.faculdadeimpacta.com.br
 RA 2101763
+EAD - ADS 5B
 
 - Requisitos do projeto gerador de pedido
 
