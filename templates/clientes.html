@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <a href="/">
+        <button type="submit">
+            Voltar
+        </button>
+    </a>
+    <a href="/cadastrar-cliente">
+        <button type="submit" id="index-btn-cadastrarCliente">
+            Cadastrar Novo Cliente
+        </button>
+    </a>
+    <h2>Clientes</h2>
+    <ul>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Nome|Razão Social</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Endereço</th>
+                <th>Cpf|Cnpj</th>
+                <th>Data de Cadastro</th>
+            </tr>
+            {% for c in clientes %}
+            <tr>
+                <td>{{c.id}}</td>
+                <td>{{c.nomeRazaoSocial}}</td>
+                <td>{{c.dataNascimentoAbertura}}</td>
+                <td>{{c.telefone}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.endereco}}</td>
+                <td>{{c.cpfCnpj}}</td>
+                <td>{{c.dataCadastro}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </ul>
+
+{% endblock %}
