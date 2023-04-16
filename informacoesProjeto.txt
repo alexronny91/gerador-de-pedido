@@ -17,6 +17,9 @@ EAD - ADS 5B
 3- Cadastro de pedido
 4- Listar pedidos
 
+-Link do repositório
+https://github.com/alexronny91/gerador-de-pedido
+
 - Link do board
 
 https://github.com/users/alexronny91/projects/1/views/1
