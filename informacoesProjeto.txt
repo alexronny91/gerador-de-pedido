@@ -20,3 +20,8 @@ EAD - ADS 5B
 - Link do board
 
 https://github.com/users/alexronny91/projects/1/views/1
+
+- Link Video
+    
+Sprint 1 (Cadastro de cliente)
+https://youtu.be/P_FztnD3MsY
