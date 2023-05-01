@@ -24,7 +24,10 @@ https://github.com/alexronny91/gerador-de-pedido
 
 https://github.com/users/alexronny91/projects/1/views/1
 
-- Link Video
+- Link Videos
     
 Sprint 1 (Cadastro de cliente)
 https://youtu.be/P_FztnD3MsY
+
+Sprint 2 (Cadastro de produto ou serviço)
+https://youtu.be/WcLxNYnnVMs
