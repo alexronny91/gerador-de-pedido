@@ -13,6 +13,10 @@ body {
     background-color: darkcyan;
 }
 
+.icones {
+  width: 20px;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

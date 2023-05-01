@@ -7,35 +7,25 @@
             Início
         </button>
     </a>
-    <a href="/cadastrar-cliente">
+    <a href="/cadastrar-produto-servico">
         <button type="submit" id="index-btn-cadastrarCliente">
-            Cadastrar Novo Cliente
+            Cadastrar Novo Produto/Serviço
         </button>
     </a>
-    <h2>Clientes</h2>
+    <h2>Produtos / Serviços</h2>
     <ul>
         <table>
             <tr>
                 <th>Código</th>
-                <th>Nome|Razão Social</th>
-                <th>Data de Nascimento</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Endereço</th>
-                <th>Cpf|Cnpj</th>
-                <th>Data de Cadastro</th>
+                <th>Nome / Descrição</th>
+                <th>Valor Unitário</th>
                 <!-- <th>Editar / Apagar</th> -->
             </tr>
-            {% for c in clientes %}
+            {% for i in produtos_servicos %}
             <tr>
-                <td>{{c.id}}</td>
-                <td>{{c.nomeRazaoSocial}}</td>
-                <td>{{c.dataNascimentoAbertura}}</td>
-                <td>{{c.telefone}}</td>
-                <td>{{c.email}}</td>
-                <td>{{c.endereco}}</td>
-                <td>{{c.cpfCnpj}}</td>
-                <td>{{c.dataCadastro}}</td>
+                <td>{{i.id}}</td>
+                <td>{{i.nomeDescricao}}</td>
+                <td>{{i.valorUnitario}}</td>
                 <!-- <td>
                     <a href="#">
                         <img class="icones" src="https://cdn-icons-png.flaticon.com/512/61/61456.png" alt="Editar">

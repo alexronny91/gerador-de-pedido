@@ -32,3 +32,18 @@ class Cliente(db.Model):
         return f'[{self.id}, {self.nomeRazaoSocial}, {self.dataNascimentoAbertura}, {self.telefone}, {self.email}, {self.cpfCnpj}, {self.dataCadastro}]'
 
     
+class ProdutoServico(db.Model):
+    __tablename__ = "produtoServico"
+    id = db.Column(db.Integer, primary_key=True)
+    nomeDescricao = db.Column(db.String)
+    valorUnitario = db.Column(db.Integer)
+
+    def __init__(self, 
+                 nomeDescricao, 
+                 valorUnitario):
+        
+        self.nomeDescricao = nomeDescricao
+        self.valorUnitario = valorUnitario
+
+    def __repr__(self):
+        return f'[{self.id}, {self.nomeDescricao}, {self.valorUnitario}]'

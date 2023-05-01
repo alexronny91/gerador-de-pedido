@@ -1,5 +1,5 @@
 from flask import render_template, request, flash, Blueprint
-from models import Cliente
+from models import Cliente, ProdutoServico
 from database import db
 import datetime as dt
 from datetime import datetime
@@ -17,7 +17,7 @@ def clientes():
     return render_template('clientes.html', clientes=listaClientes)
 
 @bp.route("/cadastrar-cliente", methods=['GET', 'POST'])
-def telaCadastro():
+def telaCadastroCliente():
     if request.method == 'GET':
         return render_template('cadastrarCliente.html')
     
@@ -42,3 +42,23 @@ def telaCadastro():
             db.session.add(c)
             db.session.commit()
             return render_template('posCadastro.html', msgSucesso='Cliente cadastrado com sucesso!!!')
+
+@bp.route("/produtos-servicos")
+def produtosServicos():
+    listaProdutosServicos = ProdutoServico.query.all()
+    return render_template('produtos-servicos.html', produtos_servicos=listaProdutosServicos)
+
+@bp.route("/cadastrar-produto-servico", methods=['GET', 'POST'])
+def telaCadastroProdutoServico():
+    if request.method == 'GET':
+        return render_template('cadastrarProdutoServico.html')
+    
+    if request.method == 'POST':
+        nomeDescricao = request.form.get('nome-descricao')
+        valorUnitario = request.form.get('valor-unitario')
+
+        i = ProdutoServico(nomeDescricao, valorUnitario)
+        
+        db.session.add(i)
+        db.session.commit()
+        return render_template('posCadastro.html', msgSucesso='Produto/Serviço cadastrado com sucesso!!!')
