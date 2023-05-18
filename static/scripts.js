@@ -25,4 +25,17 @@ function validarFormulario(nomeFormulario) {
     
         return true;
     }
+    
+    if (nomeFormulario == 'pedido') {
+        var cliente = document.getElementById('option-cliente').value;
+        var produto = document.getElementById('option-produto-servico').value;
+        var quantidade = document.getElementById('quantidade-produtos-servicos').value;
+        
+        if (!cliente || !produto || !quantidade) {
+            alert('Por favor, preencha todos os campos!');
+            return false;
+        }
+    
+        return true;
+    }
 }

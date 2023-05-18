@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+
     <h2>Página Inicial</h2>
     <a href="/clientes">
         <button type="submit" id="index-btn-cadastrarCliente">
@@ -12,8 +13,10 @@
             Produtos/Serviços
         </button>
     </a>
-    <button type="submit">
-        Criar Pedido
-    </button>
+    <a href="/pedidos">
+        <button type="submit">
+            Pedidos
+        </button>
+    </a>
 
 {% endblock %}

@@ -36,7 +36,7 @@ class ProdutoServico(db.Model):
     __tablename__ = "produtoServico"
     id = db.Column(db.Integer, primary_key=True)
     nomeDescricao = db.Column(db.String)
-    valorUnitario = db.Column(db.Integer)
+    valorUnitario = db.Column(db.Float)
 
     def __init__(self, 
                  nomeDescricao, 
@@ -47,3 +47,31 @@ class ProdutoServico(db.Model):
 
     def __repr__(self):
         return f'[{self.id}, {self.nomeDescricao}, {self.valorUnitario}]'
+
+class Pedido(db.Model):
+    __tablename__ = "pedidos"
+    id = db.Column(db.Integer, primary_key=True)
+    dataPedido = db.Column(db.Date)
+    idCliente = db.Column(db.Integer, db.ForeignKey('cliente.id'))
+    idProdutoServico = db.Column(db.Integer, db.ForeignKey('produtoServico.id'))
+    quantidade = db.Column(db.Integer)
+    valorProdutoServico = db.Column(db.Float)
+    valorTotalPedido = db.Column(db.Float)
+
+    def __init__(self,
+                 dataPedido,
+                 idCliente,
+                 idProdutoServico,
+                 quantidade,
+                 valorProdutoServico,
+                 valorTotalPedido):
+        
+        self.dataPedido = dataPedido
+        self.idCliente = idCliente
+        self.idProdutoServico = idProdutoServico
+        self.quantidade = quantidade
+        self.valorProdutoServico = valorProdutoServico
+        self.valorTotalPedido = valorTotalPedido
+
+    def __repr__(self):
+        return f'[{self.id}, {self.dataPedido}, {self.idCliente}, {self.idProdutoServico}, {self.quantidade}, {self.valorProdutoServico}, {self.valorTotalPedido}]'

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <a href="/">
+        <button type="submit">
+            Início
+        </button>
+    </a>
+    <a href="/cadastrar-pedido">
+        <button type="submit">
+            Cadastrar Novo Pedido
+        </button>
+    </a>
+    <h2>Pedidos</h2>
+    <ul>
+        <table>
+            <tr>
+                <th>Nº do Pedido</th>
+                <th>Data do Pedido</th>
+                <th>Nome do Cliente</th>
+                <th>Valor Total</th>
+            </tr>
+            {% for p in pedidos %}
+            <tr>
+                <td>{{p.id}}</td>
+                <td>{{p.dataPedido}}</td>
+                <td>{{clientes[p.idCliente - 1].nomeRazaoSocial}}</td>
+                <td>{{p.valorTotalPedido}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </ul>
+
+{% endblock %}

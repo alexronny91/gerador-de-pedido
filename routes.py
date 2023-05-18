@@ -1,5 +1,5 @@
 from flask import render_template, request, flash, Blueprint
-from models import Cliente, ProdutoServico
+from models import Cliente, ProdutoServico, Pedido
 from database import db
 import datetime as dt
 from datetime import datetime
@@ -62,3 +62,37 @@ def telaCadastroProdutoServico():
         db.session.add(i)
         db.session.commit()
         return render_template('posCadastro.html', msgSucesso='Produto/Serviço cadastrado com sucesso!!!')
+
+@bp.route("/pedidos")
+def pedidos():
+    listaPedidos = Pedido.query.all()
+    listaClientes = Cliente.query.all()
+    return render_template('pedidos.html', pedidos=listaPedidos, clientes=listaClientes)
+
+@bp.route("/cadastrar-pedido", methods=['GET', 'POST'])
+def telaCadastroPedido():
+    listaPedidos = Pedido.query.all()
+    listaClientes = Cliente.query.all()
+    listaProdutosServicos = ProdutoServico.query.all()
+    if request.method == 'GET':
+        return render_template('cadastrarPedido.html', pedidos=listaPedidos, clientes=listaClientes, produtos_servicos=listaProdutosServicos)
+    
+    if request.method == 'POST':
+        cliente = request.form.get('cliente')
+        produto = request.form.get('produto-servico')
+        quantidade = request.form.get('quantidade')
+        dataPedido = dt.date.today()
+        valorProdutoServico = listaProdutosServicos[int(produto)-1].valorUnitario * int(quantidade)
+        valorTotal = valorProdutoServico
+
+        print(cliente)
+        print(produto)
+        print(quantidade)
+        print(listaProdutosServicos)
+
+        i = Pedido(dataPedido, cliente, produto, quantidade, valorProdutoServico, valorTotal)
+        
+        db.session.add(i)
+        db.session.commit()
+
+        return render_template('posCadastro.html', msgSucesso='Pedido cadastrado com sucesso!!!')
