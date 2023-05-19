@@ -31,3 +31,6 @@ https://youtu.be/P_FztnD3MsY
 
 Sprint 2 (Cadastro de produto ou serviço)
 https://youtu.be/WcLxNYnnVMs
+
+Sprint 3 (Cadastro e listagem de pedidos)
+https://youtu.be/9UIPGhZrkvw
