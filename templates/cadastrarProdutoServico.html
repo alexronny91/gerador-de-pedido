@@ -2,11 +2,13 @@
 
 {% block conteudo %}
 
-    <a href="/produtos-servicos">
-        <button type="submit">
-            Voltar
-        </button>
-    </a>
+    <div class="button-container">
+        <a href="/produtos-servicos">
+            <button type="submit">
+                Voltar
+            </button>
+        </a>
+    </div>
 
     <h2>Cadastro de Produto / Serviço</h2>
 
@@ -19,7 +21,7 @@
             <label for="valor-unitario">*Valor Unitário:</label>
             <input type="number" id="input-cadastro-valor-unitario" name="valor-unitario">
         </div>
-        <div>
+        <div class="button-container">
             <button type="submit">
                 Cadastrar
             </button>

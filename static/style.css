@@ -1,52 +1,103 @@
 body {
-    background-color: var(--cor-cinza-claro);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  margin: 1px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.imagem {
+  height: 400px;
+}
+
+select {
+  width: 100%;  
+}
+
+.cadastro-pedido-linha-cliente {
+  width: 100%;
+  background-color: darkcyan;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-container button {
+  background-color: rgb(201, 201, 201);
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .cabecalho {
-    background-color: darkcyan;
+  background-color: darkcyan;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .rodape {
-    background-color: darkcyan;
+  background-color: darkcyan;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .icones {
   width: 20px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #333;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tr:hover {
-    background-color: #ddd;
-  }
-  
-  td:first-child {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  
-  td:last-child {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+input {
+  width: 150px;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: darkcyan;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+form {
+  text-align: right;
+}

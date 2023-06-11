@@ -2,16 +2,18 @@
 
 {% block conteudo %}
 
-    <a href="/">
-        <button type="submit">
-            Início
-        </button>
-    </a>
-    <a href="/cadastrar-pedido">
-        <button type="submit">
-            Cadastrar Novo Pedido
-        </button>
-    </a>
+    <div class="button-container">
+        <a href="/">
+            <button type="submit">
+                Início
+            </button>
+        </a>
+        <a href="/cadastrar-pedido">
+            <button type="submit">
+                Cadastrar Novo Pedido
+            </button>
+        </a>
+    </div>
     <h2>Pedidos</h2>
     <ul>
         <table>
@@ -25,7 +27,7 @@
             <tr>
                 <td>{{p.id}}</td>
                 <td>{{p.dataPedido}}</td>
-                <td>{{clientes[p.idCliente - 1].nomeRazaoSocial}}</td>
+                <td>{{buscarNomeCliente(clientes, p.idCliente)}}</td>
                 <td>{{p.valorTotalPedido}}</td>
             </tr>
             {% endfor %}

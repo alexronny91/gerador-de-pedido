@@ -2,21 +2,25 @@
 
 {% block conteudo %}
 
-    <h2>Página Inicial</h2>
-    <a href="/clientes">
-        <button type="submit" id="index-btn-cadastrarCliente">
-            Clientes
-        </button>
-    </a>
-    <a href="/produtos-servicos">
-        <button type="submit">
-            Produtos/Serviços
-        </button>
-    </a>
-    <a href="/pedidos">
-        <button type="submit">
-            Pedidos
-        </button>
-    </a>
+<div>
+    <div class="button-container">
+        <a href="/clientes">
+            <button type="submit" id="index-btn-cadastrarCliente">
+                Clientes
+            </button>
+        </a>
+        <a href="/produtos-servicos">
+            <button type="submit">
+                Produtos/Serviços
+            </button>
+        </a>
+        <a href="/pedidos">
+            <button type="submit">
+                Pedidos
+            </button>
+        </a>
+    </div>
+    <img class="imagem" src="/static/pedido.png" alt="foto-pedido">
+</div>
 
 {% endblock %}

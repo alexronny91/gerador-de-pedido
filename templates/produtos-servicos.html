@@ -2,6 +2,7 @@
 
 {% block conteudo %}
 
+<div class="button-container">
     <a href="/">
         <button type="submit">
             Início
@@ -12,31 +13,43 @@
             Cadastrar Novo Produto/Serviço
         </button>
     </a>
-    <h2>Produtos / Serviços</h2>
-    <ul>
-        <table>
-            <tr>
-                <th>Código</th>
-                <th>Nome / Descrição</th>
-                <th>Valor Unitário</th>
-                <!-- <th>Editar / Apagar</th> -->
-            </tr>
-            {% for i in produtos_servicos %}
-            <tr>
-                <td>{{i.id}}</td>
-                <td>{{i.nomeDescricao}}</td>
-                <td>{{i.valorUnitario}}</td>
-                <!-- <td>
-                    <a href="#">
-                        <img class="icones" src="https://cdn-icons-png.flaticon.com/512/61/61456.png" alt="Editar">
-                    </a>
-                    <a href="#">
-                        <img class="icones" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Apagar">
-                    </a>
-                </td> -->
-            </tr>
-            {% endfor %}
-        </table>
-    </ul>
+</div>
+<h2>Produtos / Serviços</h2>
+<ul>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome / Descrição</th>
+            <th>Valor Unitário</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+        {% for i in produtos_servicos %}
+        <tr id="linha-produto-{{i.id}}">
+            <td>{{i.id}}</td>
+            <td>
+                <input type="text" id="nomeDescricao-{{i.id}}" value="{{i.nomeDescricao}}" readonly>
+            </td>
+            <td>
+                <input type="number" id="valorUnitario-{{i.id}}" value="{{i.valorUnitario}}" readonly>
+                
+            </td>
+            <td>
+                <a>
+                    <img class="icones editar-btn" src="https://cdn-icons-png.flaticon.com/512/61/61456.png" data-id="{{i.id}}" alt="Editar">
+                </a>
+                <a>
+                    <i class="icones salvar-btn fi fi-ss-disk" data-id="{{i.id}}" style="display: none;" alt="Salvar"></i>
+                </a>
+            </td>
+            <td>
+                <a>
+                    <img class="icones excluir-btn" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" data-id="{{i.id}}" alt="Apagar">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
 
 {% endblock %}

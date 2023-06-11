@@ -2,51 +2,74 @@
 
 {% block conteudo %}
 
-    <a href="/">
-        <button type="submit">
-            Início
-        </button>
-    </a>
-    <a href="/cadastrar-cliente">
-        <button type="submit" id="index-btn-cadastrarCliente">
-            Cadastrar Novo Cliente
-        </button>
-    </a>
+<ul>
+    <div class="button-container">
+        <a href="/">
+            <button type="submit">
+                Início
+            </button>
+        </a>
+        <a href="/cadastrar-cliente">
+            <button type="submit" id="index-btn-cadastrarCliente">
+                Cadastrar Novo Cliente
+            </button>
+        </a>
+    </div>
     <h2>Clientes</h2>
-    <ul>
-        <table>
-            <tr>
-                <th>Código</th>
-                <th>Nome|Razão Social</th>
-                <th>Data de Nascimento</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Endereço</th>
-                <th>Cpf|Cnpj</th>
-                <th>Data de Cadastro</th>
-                <!-- <th>Editar / Apagar</th> -->
-            </tr>
-            {% for c in clientes %}
-            <tr>
-                <td>{{c.id}}</td>
-                <td>{{c.nomeRazaoSocial}}</td>
-                <td>{{c.dataNascimentoAbertura}}</td>
-                <td>{{c.telefone}}</td>
-                <td>{{c.email}}</td>
-                <td>{{c.endereco}}</td>
-                <td>{{c.cpfCnpj}}</td>
-                <td>{{c.dataCadastro}}</td>
-                <!-- <td>
-                    <a href="#">
-                        <img class="icones" src="https://cdn-icons-png.flaticon.com/512/61/61456.png" alt="Editar">
-                    </a>
-                    <a href="#">
-                        <img class="icones" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Apagar">
-                    </a>
-                </td> -->
-            </tr>
-            {% endfor %}
-        </table>
-    </ul>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome|Razão Social</th>
+            <th>Data de Nascimento</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Endereço</th>
+            <th>Cpf|Cnpj</th>
+            <th>Data de Cadastro</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+        </tr>
+        {% for c in clientes %}
+        <tr id="linha-cliente-{{c.id}}">
+            <td>{{c.id}}</td>
+            <td>
+                <input type="text" id="nomeRazaoSocial-{{c.id}}" value="{{c.nomeRazaoSocial}}" readonly>
+            </td>
+            <td>
+                <input type="date" id="dataNascimentoAbertura-{{c.id}}" value="{{c.dataNascimentoAbertura}}" readonly>
+            </td>
+            <td>
+                <input type="tel" id="telefone-{{c.id}}" value="{{c.telefone}}" readonly>
+            </td>
+            <td>
+                <input type="email" id="email-{{c.id}}" value="{{c.email}}" readonly>
+            </td>
+            <td>
+                <input type="text" id="endereco-{{c.id}}" value="{{c.endereco}}" readonly>
+            </td>
+            <td>
+                <input type="number" id="cpfCnpj-{{c.id}}" value="{{c.cpfCnpj}}" readonly>
+            </td>
+            <td>
+                <input type="date" id="dataCadastro-{{c.id}}" value="{{c.dataCadastro}}" readonly>
+            </td>
+            <td>
+                <a>
+                    <img class="icones editar-btn" src="https://cdn-icons-png.flaticon.com/512/61/61456.png"
+                        data-id="{{c.id}}" alt="Editar">
+                </a>
+                <a>
+                    <i class="icones salvar-btn fi fi-ss-disk" data-id="{{c.id}}" style="display: none;" alt="Salvar"></i>
+                </a>
+            </td>
+            <td>
+                <a>
+                    <img class="icones excluir-btn" data-id="{{c.id}}" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Apagar">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</ul>
 
 {% endblock %}

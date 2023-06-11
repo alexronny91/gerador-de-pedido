@@ -2,51 +2,46 @@
 
 {% block conteudo %}
 
+<div class="button-container">
     <a href="/pedidos">
         <button type="submit">
             Voltar
         </button>
     </a>
+</div>
 
-    <h2>Cadastro de Pedido</h2>
+<h2>Cadastro de Pedido</h2>
 
-    <form onsubmit="return validarFormulario('pedido')" method="post">
-        <table>
-            <tr>
-                <th>Cliente</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>
-                    <label for="cliente"></label>
-                    <select name="cliente">
-                        {% for c in clientes %}
-                        <option value="{{c.id}}" id="option-cliente">{{c.nomeRazaoSocial}}</option>
-                        {% endfor %}
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Produto / Serviço</th>
-                <th>Quantidade</th>
-            </tr>
-                <td>
-                    <label for="produto-servico"></label>
-                    <select name="produto-servico">
-                        {% for ps in produtos_servicos %}
-                        <option value="{{ps.id}}" id="option-produto-servico">{{ps.nomeDescricao}}</option>
-                        {% endfor %}
-                    </select>
-                </td>
-                <td>
-                    <label for="quantidade"></label>
-                    <input type="number" id="quantidade-produtos-servicos" name="quantidade" min="1" max="1000" value="1"></input>
-                </td>
-            </tr>  
-        </table>   
-        <div>
-            <button type="submit">Cadastrar</button>
-        </div>
-    </form>
-    
+<form onsubmit="return validarFormulario('pedido')" method="post">
+    <div class="cadastro-pedido-linha-cliente">Cliente</div>
+    <label for="cliente"></label>
+    <select name="cliente">
+        {% for c in clientes %}
+        <option value="{{c.id}}" id="option-cliente">{{c.nomeRazaoSocial}}</option>
+        {% endfor %}
+    </select>
+    <table>
+        <tr>
+            <th>Produto / Serviço</th>
+            <th>Quantidade</th>
+        </tr>
+        <td>
+            <label for="produto-servico"></label>
+            <select name="produto-servico">
+                {% for ps in produtos_servicos %}
+                <option value="{{ps.id}}" id="option-produto-servico">{{ps.nomeDescricao}}</option>
+                {% endfor %}
+            </select>
+        </td>
+        <td>
+            <label for="quantidade"></label>
+            <input type="number" id="quantidade-produtos-servicos" name="quantidade" min="1" max="1000"
+                value="1"></input>
+        </td>
+    </table>
+    <div class="button-container">
+        <button type="submit">Cadastrar</button>
+    </div>
+</form>
+
 {% endblock %}

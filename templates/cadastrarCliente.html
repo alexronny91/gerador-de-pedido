@@ -2,44 +2,45 @@
 
 {% block conteudo %}
 
+<div class="button-container">
     <a href="/clientes">
-        <button type="submit">
+        <button class=".button-container" type="submit">
             Voltar
         </button>
     </a>
+</div>
+<h2>Cadastro de Cliente</h2>
 
-    <h2>Cadastro de Cliente</h2>
+<form onsubmit="return validarFormulario('cliente')" method="post">
+    <div>
+        <label for="campo-nome">*Nome ou Razão Social:</label>
+        <input type="text" id="campo-nome" name="nome">
+    </div>
+    <div>
+        <label for="data-nascimento">Data de Nascimento ou Abertura:</label>
+        <input type="date" id="data-nascimento" name="data">
+    </div>
+    <div>
+        <label for="telefone">*Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+    </div>
+    <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email">
+    </div>
+    <div>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco">
+    </div>
+    <div>
+        <label for="cpf-cnpj">*CPF ou CNPJ:</label>
+        <input type="number" id="cpf-cnpj" name="cpf-cnpj">
+    </div>
+    <div class="button-container">
+        <button type="submit">
+            Cadastrar
+        </button>
+    </div>
+</form>
 
-    <form onsubmit="return validarFormulario('cliente')" method="post">
-        <div>
-            <label for="campo-nome">*Nome ou Razão Social:</label>
-            <input type="text" id="campo-nome" name="nome">
-        </div>
-        <div>
-            <label for="data-nascimento">Data de Nascimento ou Abertura:</label>
-            <input type="date" id="data-nascimento" name="data">
-        </div>
-        <div>
-            <label for="telefone">*Telefone:</label>
-            <input type="number" id="telefone" name="telefone">
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div>
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco">
-        </div>
-        <div>
-            <label for="cpf-cnpj">*CPF ou CNPJ:</label>
-            <input type="number" id="cpf-cnpj" name="cpf-cnpj">
-        </div>
-        <div>
-            <button type="submit">
-                Cadastrar
-            </button>
-        </div>
-    </form>
-    
 {% endblock %}
